@@ -24,7 +24,7 @@ Cerrar Sesión
 Login en caso de haber cerrado sesión
 Nota: La opción de editar y eliminar instrumentos musicales solo le está permitido al autor de la publicación del libro.
 
-Tecnología Utilizada
+## Tecnología Utilizada
 Front-End
 HTML 5
 CSS 3
@@ -33,7 +33,8 @@ Bootstrap 5.2
 Back-End
 Python 3.10.4
 Django 4.0
-Pruebas Realizadas
+
+## Pruebas Realizadas
 Ver archivo titulado "Testing cases.xlsx" el cual se encuentra en el presente repositorio 
 
-Video Demostración
+## Video Demostración
