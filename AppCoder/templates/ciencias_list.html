@@ -1,0 +1,51 @@
+{% extends 'home.html' %}
+
+{% block content %}
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="container text-center">
+    <h1>Libros de ciencias y académicos</h1>
+    <p class="lead my-4">
+        ¿Quieres vender o permutar libros usados? <a href="{% url 'libro_create' %}"><button type="submit" class="btn btn-primary">Agregalo acá</button></a>
+    </p>
+</div>
+
+<br>
+<div class="container text-center">
+    <div class="row">
+        {% for ciencias in ciencias_list %}
+        <div class="col-sm-6 align-items-center">
+            <div class="card-body">
+            {% if ciencias.imagenLibro %}
+                <p><img src="{{ciencias.imagenLibro.url}}" class="" width="100px"></p>
+            {% endif %}
+            {{ciencias.titulo}}
+            <br>  
+            Autor: {{ciencias.autor}}
+            <br>  
+            Precio (ARS): {{ciencias.precio}}
+            <a href="{% url 'ciencias_detail' ciencias.id %}"><i class="bi bi-eye"></i></a>
+            {% if user.id == ciencias.usuario.id %}
+            <a href="{% url 'ciencias_edit' ciencias.id %}"><i class="bi bi-pencil-fill"></i></a>
+            <a href="{% url 'ciencias_delete' ciencias.id %}"><i class="bi bi-trash text-danger"></i></a>
+            <br>
+            <br>
+            <br>
+            <br>
+            {% endif %}
+            </div>
+        </div>
+        {% endfor %}    
+    </div> 
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+{% endblock content %}

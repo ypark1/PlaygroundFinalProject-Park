@@ -1,0 +1,52 @@
+{% extends 'home.html' %}
+
+{% block content %}
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="container text-center">
+    <h1>Libros infantiles y juveniles</h1>
+    <p class="lead my-4">
+        ¿Quieres vender o permutar libros usados? <a href="{% url 'libro_create' %}"><button type="submit" class="btn btn-primary">Agregalo acá</button></a>
+    </p>
+</div>
+
+<br>
+<div class="container text-center">
+    <div class="row">
+        {% for infantil in infantil_list %}
+        <div class="col-sm-6 align-items-center">
+            <div class="card-body">
+            {% if infantil.imagenLibro %}
+                <p><img src="{{infantil.imagenLibro.url}}" class="" width="100px"></p>
+            {% endif %}
+            {{infantil.titulo}}
+            <br>  
+            Autor: {{infantil.autor}}
+            <br>  
+            Precio (ARS): {{infantil.precio}}
+            <br>  
+            <a href="{% url 'infantil_detail' infantil.id %}"><i class="bi bi-eye"></i></a>
+            {% if user.id == infantil.usuario.id %}
+            <a href="{% url 'infantil_edit' infantil.id %}"><i class="bi bi-pencil-fill"></i></a>
+            <a href="{% url 'infantil_delete' infantil.id %}"><i class="bi bi-trash text-danger"></i></a>
+            <br>
+            <br>
+            <br>
+            <br>
+            {% endif %}
+            </div>
+        </div>
+        {% endfor %}    
+    </div> 
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+{% endblock content %}

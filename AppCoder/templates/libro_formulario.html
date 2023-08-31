@@ -1,0 +1,16 @@
+{% extends 'index.html' %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+    <h1>Formulario de alta de libros</h1>
+    <p>Completa los siguientes campos para dar de alta un libro</p>
+    <form method="post">
+        {% csrf_token %}
+        <table>
+            {{mi_formulario.as_table}}
+        </table>
+        <input type="submit" value="Enviar">
+    </form>
+{% endblock contenidoQueCambia %}

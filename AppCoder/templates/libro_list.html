@@ -1,0 +1,21 @@
+{% extends 'index.html' %}
+
+{% block contenidoQueCambia %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista libros</title>
+</head>
+<body>
+    <h1>Lista libros</h1>
+<ul>
+    {% for l in libro %}
+    <li>{{l.titulo}} - Autor: {{l.autor}}</li>
+    {% endfor %}
+</ul>
+</body>
+</html>
+{% endblock contenidoQueCambia %}

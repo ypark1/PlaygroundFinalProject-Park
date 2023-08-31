@@ -1,0 +1,50 @@
+{% extends 'home.html' %}
+
+
+{% block content %}
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="container">
+
+<p><h4>{{otro.titulo}}</h4></p>
+
+{% if otro.imagenLibro %}
+    <p><img src="{{otro.imagenLibro.url}}" alt=""></p>
+{% endif %}
+<p>Autor: {{otro.autor}}</p>
+<p>Editorial: {{otro.editorial}}</p>
+<p>Edición: {{otro.edicion}}</p>
+<p>Descripción: {{otro.descripcion}}</p>
+<p>Precio(ARS): {{otro.precio}}</p>
+<p>Teléfono de Contacto: {{otro.telefonoContacto}}</p>
+<p>Email de Contacto: {{otro.emailContacto}}</p>
+
+</div>
+<br>
+<div class="container">
+    <h4>Comentarios</h4>
+    <br>
+    <div class="container">
+    {% if not otro.comentarios.all %}
+    No han comentado este instrumento
+    {% else %}
+        {% for comentario in otro.comentarios.all %}
+        <p><strong>{{comentario.nombre}}</strong></p>
+        <p>{{comentario.mensaje}}</p>
+        <p><small>{{comentario.fechaComentario}}</small></p>
+        <hr>
+        {% endfor %}
+    {% endif %}
+    <a href="{% url 'comentario' otro.pk %}">Agrega un Comentario</a>
+    </div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+{% endblock %}

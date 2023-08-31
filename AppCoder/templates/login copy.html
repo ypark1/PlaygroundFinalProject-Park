@@ -1,0 +1,21 @@
+{% extends 'home.html' %}
+
+
+{% block content %}
+<br>
+<br>
+<br>
+<br>
+<h1>Ingresar</h1>
+<br>
+<p>Escribe tu usuario y contraseña para ingresar.</p>
+<form action="" method="POST">
+    {% csrf_token %}   
+        {{ form.as_p}}
+    <button type="submit">Inciar Sesion</button>
+    <br>
+    <br>
+    <br>
+</form>
+
+{% endblock content %}

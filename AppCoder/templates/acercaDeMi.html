@@ -1,0 +1,50 @@
+{% extends 'home.html' %}
+{% load static %}
+
+{% block content %}
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
+
+    <div class="container">
+       <h2 class="text-center text-dark">
+           Acerca de mi
+       </h2>
+       <br>
+       <div class="row g-4">
+           <div class="col-md-6 col-lg-3">
+               <div class="card bg-success">
+                    <div class="card-body text-center">
+                        <img src="{% static 'imagenes/ypark.JPG' %}" class="rounded-circle mb-3" width="150px">
+                    <h3 class="card-title mb-3">Ye Seul Park</h3>
+                    <p class="card-text">Python Developer Jr.</p>
+                    <p class="card-text">Sigueme en:</p>
+                    <a href="https://github.com/ypark1/"><i class="bi bi-github text-dark mx-1"></i></a>
+                    <a href="https://www.linkedin.com/in/monica-ye-seul-park-519275120/"><i class="bi bi-linkedin text-dark mx-1"></i></a>
+                    </div>
+               </div>
+           </div>
+           <div class="col">
+            <div class="">
+                 <div class="text-center">
+                    <p>¡Hola! Mi nombre es Ye Seul y actualmente soy Product Owner del equipo de RPA en Exxonmobil. Estoy aprendiendo el lenguaje de programación Python y el Framework Django. ¡Gracias por visitar mi página!</p>
+                 </div>
+            </div>
+        </div>
+       </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+
+
+
+{% endblock %}

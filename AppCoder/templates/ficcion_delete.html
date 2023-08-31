@@ -1,0 +1,41 @@
+{% extends 'home.html' %}
+
+{% block content %}
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+{% if user.id == ficcion.usuario.id %}
+
+<div class="container text-center">
+
+<form method="post">{% csrf_token %}
+    <h4>Estás seguro(a) que deseas borrar el libro {{ficcion.titulo}} - Autor: {{ficcion.autor}} ?</h4>
+    <p>
+        <button type="submit" class="btn btn-danger">Eliminar</button>
+    </p>
+</form>
+
+</div>
+{% else %}
+<div class="container">
+<h4>No tienes acceso a esta pagina!</h4>
+</div>
+{% endif %}
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+{% endblock content %}
