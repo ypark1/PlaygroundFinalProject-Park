@@ -38,5 +38,5 @@ Nota: La opción de editar y eliminar libros solo le está permitido al autor de
 ## Pruebas Realizadas
 Ver archivo titulado "Testing cases.xlsx" el cual se encuentra en el presente repositorio 
 
-## Video Demostración
+## Video Demo
 https://drive.google.com/drive/folders/1WwaM2FmYAdfVcaEdA8Ep1ygZvzu7PEoh
